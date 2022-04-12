@@ -3,7 +3,7 @@
 
 year = input('Введите год: ')
 if int(year[-2:]) != 0:
-    print(int(year[:len(year) // 2]) + 1)
+    print(int(year[:-2])+ 1)
 else:
-    print(int(year[:len(year) // 2]))
+    print(int(year[:-2]))
 
