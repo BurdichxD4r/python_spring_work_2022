@@ -19,10 +19,14 @@ if user_namber in Mass:
         Mass_index.append(Mass.index(user_namber))
         Mass.insert(Mass.index(user_namber), False)
         Mass.remove(user_namber)
-    for i  in range (len(Mass_index) - 1):
-        Mass_end.append(Mass_index[i + 1] - Mass_index[i])
-    print('Для числа', user_namber, 'индексы двух ближайших чисел:',
-          Mass_index[Mass_end.index(min(Mass_end))], 'и',
-          Mass_index[Mass_end.index(min(Mass_end)) + 1])
+    if len(Mass_index) > 1:
+        for i  in range (len(Mass_index) - 1):
+            Mass_end.append(Mass_index[i + 1] - Mass_index[i])
+        print('Для числа', user_namber, 'индексы двух ближайших чисел:',
+              Mass_index[Mass_end.index(min(Mass_end))], 'и',
+              Mass_index[Mass_end.index(min(Mass_end)) + 1])
+    else:
+        print('Число', user_namber, 'в списке уникально и имеет индекс:', Mass_index[0])
 else:
     print('Такого числа нет!')
+
