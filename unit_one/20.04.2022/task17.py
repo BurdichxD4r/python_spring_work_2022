@@ -27,3 +27,4 @@ compute_bill(buy_1)
 for i in total:
   total_price += int(i)
 print(total_price)
+
