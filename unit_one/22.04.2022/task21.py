@@ -21,3 +21,17 @@ template = """
  </body>
 </html>
 """
+
+index_html = open('index.html', 'w')
+index_html.write(template)
+index_html.close()
+index_html = open('index.html', 'r')
+index_html_list = list(index_html.readlines())
+for key in page.keys():
+        for phrase in index_html_list:
+                if key in phrase:
+                        index_html_list[index_html_list.index(phrase)] = phrase.replace('?', page.get(key))
+index_html.close()
+index_html = open('index.html', 'w')
+index_html.writelines(index_html_list)
+index_html.close()
