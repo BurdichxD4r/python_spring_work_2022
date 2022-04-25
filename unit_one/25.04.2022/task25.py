@@ -3,5 +3,5 @@
 # Буквы должны идти в том порядке, в котором встретились во фразе в первый раз.
 
 # Input             	            Output
-# apple	                        aple
+# apple	                            aple
 # 25.04.2022 Good morning !!	    godmrni

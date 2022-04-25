@@ -7,3 +7,10 @@ algoritm = [ "C4.5" , "k - means" , "Метод опорных векторов"
 
 #  Каждое значение из списка должно находится на отдельной строке.
 
+
+algoritm_csv = open('algoritm.csv', 'w')
+id = 0
+for string in algoritm:
+    id += 1
+    algoritm_csv.write(str(id) + ',' + str(string) + '\n')
+algoritm_csv.close()
