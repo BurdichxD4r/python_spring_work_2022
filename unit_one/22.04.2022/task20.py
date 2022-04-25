@@ -12,3 +12,10 @@
 # Simple is better than complex.
 # Explicit is better than implicit.
 # Beautiful is better than ugly.
+
+import_this = open('import_this.txt', 'r')
+Input = list(import_this.readlines())
+Input.reverse()
+Input = ''.join(Input)
+print(Input)
+import_this.close()
