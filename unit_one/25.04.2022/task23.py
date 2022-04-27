@@ -9,7 +9,21 @@ alphabet = []
 while string != '':
     alphabet.append(string[0])
     string = string.replace(string[0], '')
-print(alphabet)
-for letter in alphabet:
-    string_code_ready = string_code.replace(letter, alphabet[alphabet.index(letter) - 1])
-print(string_code_ready)
+alphabet = alphabet + alphabet
+string = "grznuamnzngzcgesgetuzhkuhbouaygzloxyzatrkyyeuaxkjazin"
+string_list = list(string[:])
+letter_index = 0
+for letter in string_list:
+    if letter in alphabet:
+        string_list[letter_index] = alphabet[alphabet.index(letter) + 3]
+        letter_index += 1
+print(string_list)
+string_ready = ''
+kostil = 0
+for index in range(len(string_code)):
+    if string_code[index] != ' ' and "'" and  ',':
+        string_ready = string_ready + string_list[index + kostil]
+    else:
+        string_ready = string_ready + string_code[index]
+        kostil -= 1
+print(string_ready)
