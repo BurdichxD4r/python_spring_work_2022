@@ -22,7 +22,7 @@ from Pickle_json_yaml.serializer import to_json
 from Pickle_json_yaml.deserializer import from_json
 guess = random.randint(0, 100)
 attempt = 0
-save_file = 'Save_random_0_100_1.json'
+save_file = 'Save_random_0_100_2.json'
 def save_menu(save_file):
     global guess
     global attempt
@@ -38,22 +38,22 @@ def save_menu(save_file):
         save_menu(save_file)
 save_menu(save_file)
 while True:
-    user_namber = input('Угадай число: ')
-    if user_namber == 'S':
-        break
+    print('Для сохранения игры напечатай (S)')
+    user_number = input('Угадай число: ')
+    if user_number == 'S':
+        print('1. Продолжить игру\n2. Сохранить игру')
+        user_number_save_menu = input()
+        save_parameters = [str(guess), str(attempt)]
+        to_json(save_file, save_parameters)
     else:
-        user_namber = int(user_namber)
-        if user_namber == guess:
+        user_number = int(user_number)
+        if user_number == guess:
             print('Поздравляю Вы победили!', '\n'
                   'Всего попыток: ', attempt)
-            save_parameters = [str(guess), str(attempt)]
-            to_json(save_file, save_parameters)
             break
         else:
             attempt += 1
-            save_parameters = [str(guess), str(attempt)]
-            to_json(save_file, save_parameters)
-            if user_namber > guess:
+            if user_number > guess:
                 print('Неправильно, твоё число больше, попробуй ещё раз!')
             else:
                 print('Неправильно, твоё число меньше, попробуй ещё раз!')

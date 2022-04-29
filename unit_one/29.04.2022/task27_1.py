@@ -39,12 +39,12 @@ def save_menu(save_file):
 save_menu(save_file)
 while True:
     print('Для выхода из игры напечатай (S)')
-    user_namber = input('Угадай число: ')
-    if user_namber == 'S':
+    user_number = input('Угадай число: ')
+    if user_number == 'S':
         break
     else:
-        user_namber = int(user_namber)
-        if user_namber == guess:
+        user_number = int(user_number)
+        if user_number == guess:
             print('Поздравляю Вы победили!', '\n'
                   'Всего попыток: ', attempt)
             save_parameters = [str(guess), str(attempt)]
@@ -54,7 +54,7 @@ while True:
             attempt += 1
             save_parameters = [str(guess), str(attempt)]
             to_json(save_file, save_parameters)
-            if user_namber > guess:
+            if user_number > guess:
                 print('Неправильно, твоё число больше, попробуй ещё раз!')
             else:
                 print('Неправильно, твоё число меньше, попробуй ещё раз!')
