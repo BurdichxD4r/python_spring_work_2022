@@ -41,10 +41,18 @@ while True:
     print('Для сохранения игры напечатай (S)')
     user_number = input('Угадай число: ')
     if user_number == 'S':
-        print('1. Продолжить игру\n2. Сохранить игру')
+        print('1. Продолжить игру\n2. Сохранить игру\n3. Закончить игру')
         user_number_save_menu = input()
-        save_parameters = [str(guess), str(attempt)]
-        to_json(save_file, save_parameters)
+        if user_number_save_menu == '1':
+            continue
+        elif user_number_save_menu == '2':
+            save_parameters = [str(guess), str(attempt)]
+            to_json(save_file, save_parameters)
+            print('Игра сохранена!')
+            continue
+        else:
+            print('Всего хорошего!')
+            break
     else:
         user_number = int(user_number)
         if user_number == guess:
@@ -57,3 +65,6 @@ while True:
                 print('Неправильно, твоё число больше, попробуй ещё раз!')
             else:
                 print('Неправильно, твоё число меньше, попробуй ещё раз!')
+
+#Второй вариант задания
+#Игра автоматически не сохраняется, необходимо делать это вручную
