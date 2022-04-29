@@ -17,12 +17,17 @@
 # При выборе 2. пользователю выводится список всех сохраненных игр(происходит десериализация).
 # Из них он выберает нужную, после чего загружается состояние игры на момент сохранения.
 
+# Блок import
 import random
 from Pickle_json_yaml.serializer import to_json
 from Pickle_json_yaml.deserializer import from_json
+
+# Блок переменных
 guess = random.randint(0, 100)
 attempt = 0
 save_file = 'Save_random_0_100_1.json'
+
+# Блок функций
 def save_menu(save_file):
     global guess
     global attempt
@@ -36,6 +41,8 @@ def save_menu(save_file):
         attempt = int(save_list[1])
     else:
         save_menu(save_file)
+
+# Код игры
 save_menu(save_file)
 while True:
     print('Для выхода из игры напечатай (S)')
@@ -59,6 +66,8 @@ while True:
                 print('Неправильно, твоё число больше, попробуй ещё раз!')
             else:
                 print('Неправильно, твоё число меньше, попробуй ещё раз!')
+
+
 #В этом варианте игра автоматически сохраняется.
 #При вводе комбинации 'Shift + s, Enter', игра останавливается
 #При повторном запуске игры, предлагается выбор (1. Начать новую игру; 2. Продолжить старую игру)
