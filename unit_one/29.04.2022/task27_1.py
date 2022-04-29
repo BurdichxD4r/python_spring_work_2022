@@ -41,6 +41,7 @@ while True:
     print('Для выхода из игры напечатай (S)')
     user_number = input('Угадай число: ')
     if user_number == 'S':
+        print('Всего хорошего!')
         break
     else:
         user_number = int(user_number)
