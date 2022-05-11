@@ -13,5 +13,23 @@
 # В каждой строчке содержатся различные символы. Шифровать нужно только буквы кириллицы.
 
 
-
-
+message = open('message.txt', 'rt', encoding='UTF-8')
+message_txt = ''.join(message.readlines())
+message_txt = message_txt.lower()
+message.close()
+alphabet = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у',
+            'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
+message_cezar = open('message_cezar.txt', 'wt')
+def cezar(user_string):
+    string = ''
+    for i in range(len(user_string)):
+        string += '*'
+    for i in range(len(user_string)):
+        if user_string[i] in alphabet:
+            string = string.replace('*', alphabet[alphabet.index(user_string[i]) - 6], 1)
+        else:
+            string = string.replace('*', user_string[i], 1)
+    return string
+message_cezar.writelines(cezar(message_txt))
+print(cezar(message_txt))
+message_cezar.close()
