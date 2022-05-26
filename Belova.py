@@ -15,8 +15,8 @@ def seed_(number):
     number_ = str(number)
     return seed(number)
 #seed_(89)
-print('random.seed \nубрать "#" у 15-ой строчки кода, чтобы присвоить seed' + '\n' if run == 0 else 'random.seed(' +
-                                                                                                    number_ + ')' + '\n')
+print('random.seed \nубрать "#" у 17-ой строчки кода, чтобы присвоить seed' + '\n' if run == 0
+      else 'random.seed(' + number_ + ')' + '\n')
 
 #random.getstate() - внутреннее состояние генератора.
 print('random.getstate')
