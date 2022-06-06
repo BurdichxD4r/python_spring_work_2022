@@ -72,6 +72,7 @@ class Profile():
     def get_profile(self, conn):
         return self.login, self.password
 
+
     profile = property(get_profile, set_profile)
 
 base = DB(user, password, db_name)
