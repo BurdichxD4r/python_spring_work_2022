@@ -42,9 +42,9 @@ class DB:
     def select(self):
         with self.CONNECTION.cursor() as cursor:
             cursor.execute(
-                "SELECT version();"
+                'SELECT login, hesh_psw FROM profile;'
             )
-            print(f"Server version: {cursor.fetchone()}")
+            print(f"Server version: {cursor.fetchall()}")
 
     def getCloseConnecting(self):
         print(f'Закрытие соединения с БД: {self.db_name}')
