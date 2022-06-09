@@ -43,3 +43,20 @@
 #             summ = max(summ, list_[i] + list_[j])
 # print(quentity, summ)
 
+# file_ = open('17_14.txt')
+# list_ = [float(i) for i in file_]
+# quentity = 0
+# maxx_summ = 0
+# s = 0
+# count = 0
+# for i in list_:
+#     if i % 2 == 0:
+#         s += i
+#         count += 1
+# sr = s / count
+# for i in range(len(list_) - 1, 0, -1):
+#     if (list_[i] % 3 == 0 or list_[i - 1] % 3 == 0) and (list_[i] < sr or list_[i - 1] < sr):
+#         quentity += 1
+#         maxx_summ = max(maxx_summ, list_[i] + list_[i - 1])
+# print(quentity, maxx_summ)
+
